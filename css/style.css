@@ -1,0 +1,1852 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Zen+Tokyo+Zoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Rubik+Glitch&family=Zen+Tokyo+Zoo&display=swap");
+
+body {
+  color: #ccc;
+  background: #111;
+  font-family: Zen Tokyo Zoo;
+  overflow: hidden;
+}
+
+.black {
+  width: 100%;
+  height: 100%;
+  background: url("../source/black.png");
+  background-size: cover;
+  position: fixed;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.cyberbox {
+  width: 592px;
+  height: 722px;
+  background: url("../source/scene2.png");
+  position: absolute;
+  top: 20px;
+  right: 536px;
+  display: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  overflow: hidden;
+
+  animation: tvOn 0.5s ease-in-out forwards, glitch 3.5s infinite steps(1); /* tvOn 후에 glitch 실행 */
+  animation-play-state: paused;
+}
+
+@keyframes tvOn {
+  0% {
+    transform: scaleY(0.1); /* 얇은 선처럼 시작 */
+    opacity: 0; /* 완전히 투명 */
+  }
+  50% {
+    transform: scaleY(1); /* 최종 크기로 확대 */
+    opacity: 0.5; /* 반투명 상태 */
+  }
+  100% {
+    transform: scaleY(1); /* 최종 크기 유지 */
+    opacity: 1; /* 완전히 표시 */
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    background: url("../source/scene2.png");
+    background-size: cover;
+  }
+
+  40% {
+    background: url("../source/scene2.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  43% {
+    background: url("../source/glitch4.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  50% {
+    background: url("../source/glitch5.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  52% {
+    background: url("../source/scene2.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  80% {
+    background: url("../source/scene2.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  85% {
+    background: url("../source/glitch1.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  90% {
+    background: url("../source/glitch2.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  92% {
+    background: url("../source/scene2.png");
+    background-size: cover;
+    opacity: 1;
+  }
+
+  95% {
+    background: url("../source/glitch3.png");
+    background-size: cover;
+    opacity: 1;
+  }
+}
+.background {
+  width: 100%;
+  height: 100%;
+  background: url("../source/scene1_basic.png");
+  background-size: cover;
+  position: fixed;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+.bottle1 {
+  width: 42px;
+  height: 91px;
+  background: url("../source/bottle1.png");
+  background-size: cover;
+  position: absolute;
+  top: 278px;
+  left: 300px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  animation: tilt 1.5s infinite ease-in-out; /* 기울어지는 애니메이션 */
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg); /* 원래 위치 */
+  }
+  50% {
+    transform: rotate(13deg); /* 오른쪽으로 10도 기울어짐 */
+  }
+  100% {
+    transform: rotate(0deg); /* 다시 원래 위치 */
+  }
+}
+
+.bottle2 {
+  width: 46px;
+  height: 112px;
+  background: url("../source/bottle2.png");
+  background-size: cover;
+  position: absolute;
+  top: 254px;
+  left: 260px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  animation: tilt2 1.5s infinite ease-in-out; /* 기울어지는 애니메이션 */
+}
+
+@keyframes tilt2 {
+  0% {
+    transform: rotate(0deg); /* 원래 위치 */
+  }
+  50% {
+    transform: rotate(-8deg); /* 오른쪽으로 10도 기울어짐 */
+  }
+  100% {
+    transform: rotate(0deg); /* 다시 원래 위치 */
+  }
+}
+.hand {
+  width: 52px;
+  height: 83px;
+  background: url("../source/hand.png");
+  background-size: cover;
+  position: absolute;
+  bottom: 166px;
+  right: 630px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  animation: moveLeftRight 2s infinite ease-in-out; /* 애니메이션 적용 */
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0); /* 시작 위치 */
+  }
+  50% {
+    transform: translateX(-90px); /* 왼쪽으로 50px 이동 */
+  }
+  100% {
+    transform: translateX(0); /* 다시 원래 위치로 */
+  }
+}
+
+.line {
+  width: 35px;
+  height: 89px;
+  background: url("../source/line.png");
+  background-size: cover;
+  position: absolute;
+  top: 384px;
+  right: 304px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  animation: stretchAndShrink 2s infinite ease-in-out; /* 애니메이션 설정 */
+}
+
+@keyframes stretchAndShrink {
+  0% {
+    height: 89px; /* 기본 높이 */
+  }
+  50% {
+    height: 97px; /* 아래로 늘어남 */
+  }
+  100% {
+    height: 89px; /* 다시 원래 높이로 */
+  }
+}
+
+.what {
+  width: 61px;
+  height: 126px;
+  background: url("../source/what.png");
+  background-size: cover;
+  position: absolute;
+  top: 80px;
+  right: 410px;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: shake 0.2s infinite; /* 진동 애니메이션 설정 */
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0); /* 원래 위치 */
+  }
+  25% {
+    transform: translate(-2px, 0); /* 왼쪽으로 2px 이동 */
+  }
+  50% {
+    transform: translate(2px, 0); /* 오른쪽으로 2px 이동 */
+  }
+  75% {
+    transform: translate(-2px, 0); /* 왼쪽으로 다시 이동 */
+  }
+  100% {
+    transform: translate(0, 0); /* 원래 위치 */
+  }
+}
+
+.long {
+  width: 114px;
+  height: 177px;
+  background: url("../source/long.png");
+  background-size: cover;
+  position: absolute;
+  top: 310px;
+  left: 355px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: rotate(10deg); /* 오른쪽으로 10도 기울이기 */
+  animation: tilt3 2s infinite ease-in-out; /* 기울어지는 애니메이션 */
+}
+
+@keyframes tilt3 {
+  0% {
+    transform: rotate(0deg); /* 원래 위치 */
+  }
+  50% {
+    transform: rotate(20deg); /* 오른쪽으로 10도 기울어짐 */
+  }
+  100% {
+    transform: rotate(0deg); /* 다시 원래 위치 */
+  }
+}
+
+.one {
+  width: 75px;
+  height: 141px;
+  background: url("../source/11.png");
+  background-size: cover;
+  position: absolute;
+  top: 270px;
+  left: 334px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.turnoff {
+  width: 37px;
+  height: 185px;
+  background: url("../source/turnoff.png");
+  background-size: cover;
+  position: absolute;
+  top: 515px;
+  left: 220px;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: blink 1.5s steps(2, start) infinite; /* 딱딱 끊어지는 깜빡임 */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* 완전히 보임 */
+  }
+  50% {
+    opacity: 0; /* 완전히 사라짐 */
+  }
+}
+
+.computer {
+  width: 129px;
+  height: 156px;
+  background: url("../source/computer.png");
+  background-size: cover;
+  position: absolute;
+  bottom: -35px;
+  right: 467px;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: moveUpDown 4s infinite; /* 4초 주기 (빠른 이동 + 대기) */
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0); /* 시작 위치 */
+  }
+  5% {
+    transform: translateY(-10px); /* 위로 빠르게 이동 */
+  }
+  10% {
+    transform: translateY(0); /* 원래 위치로 빠르게 내려옴 */
+  }
+  100% {
+    transform: translateY(0); /* 대기 상태 유지 */
+  }
+}
+
+.string1 {
+  width: 179px;
+  height: 73px;
+  background: url("../source/string.png");
+  background-size: cover;
+  position: absolute;
+  top: 50px;
+  left: 270px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: rotate(40deg); /* 오른쪽으로 10도 기울이기 */
+  animation: moveUpDown 4s infinite; /* 4초 주기 (빠른 이동 + 대기) */
+  animation: stretchAndShrink2 2s infinite ease-in-out; /* 애니메이션 설정 */
+}
+
+@keyframes stretchAndShrink2 {
+  0% {
+    height: 73px; /* 기본 높이 */
+  }
+  50% {
+    height: 105px; /* 아래로 늘어남 */
+  }
+  100% {
+    height: 73px; /* 다시 원래 높이로 */
+  }
+}
+
+.string2 {
+  width: 179px;
+  height: 73px;
+  background: url("../source/string1.png");
+  background-size: cover;
+  position: absolute;
+  top: -20px;
+  right: 270px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: rotate(0deg); /* 오른쪽으로 10도 기울이기 */
+  animation: moveUpDown 4s infinite; /* 4초 주기 (빠른 이동 + 대기) */
+  animation: stretchAndShrink2 2s infinite ease-in-out; /* 애니메이션 설정 */
+}
+
+@keyframes stretchAndShrink2 {
+  0% {
+    height: 73px; /* 기본 높이 */
+  }
+  50% {
+    height: 80px; /* 아래로 늘어남 */
+  }
+  100% {
+    height: 73px; /* 다시 원래 높이로 */
+  }
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+a {
+  color: #e4039d;
+}
+
+section {
+  position: absolute;
+  left: 35px;
+}
+
+.hero {
+  font-size: clamp(20px, 10vw, 70px);
+  line-height: 1;
+  display: inline-block;
+  color: hsl(317 100% 54%);
+  z-index: 2;
+  letter-spacing: 3px; /*간격*/
+  text-align: left;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+
+  /* Bright things in dark environments usually cast that light, giving off a glow */
+  filter: drop-shadow(0 1px 3px);
+}
+
+.layers::before,
+.layers::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 110%;
+  z-index: -1;
+}
+
+.layers::before {
+  top: 10px;
+  left: 15px;
+  color: #ff4fa1;
+}
+
+.layers::after {
+  top: 5px;
+  left: -10px;
+  color: #1bc7fb;
+}
+
+.single-path {
+  clip-path: polygon(
+    0% 12%,
+    53% 12%,
+    53% 26%,
+    25% 26%,
+    25% 86%,
+    31% 86%,
+    31% 0%,
+    53% 0%,
+    53% 84%,
+    92% 84%,
+    92% 82%,
+    70% 82%,
+    70% 29%,
+    78% 29%,
+    78% 65%,
+    69% 65%,
+    69% 66%,
+    77% 66%,
+    77% 45%,
+    85% 45%,
+    85% 26%,
+    97% 26%,
+    97% 28%,
+    84% 28%,
+    84% 34%,
+    54% 34%,
+    54% 89%,
+    30% 89%,
+    30% 58%,
+    83% 58%,
+    83% 5%,
+    68% 5%,
+    68% 36%,
+    62% 36%,
+    62% 1%,
+    12% 1%,
+    12% 34%,
+    60% 34%,
+    60% 57%,
+    98% 57%,
+    98% 83%,
+    1% 83%,
+    1% 53%,
+    91% 53%,
+    91% 84%,
+    8% 84%,
+    8% 83%,
+    4% 83%
+  );
+}
+
+.paths {
+  animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+  0% {
+    clip-path: polygon(
+      0% 43%,
+      83% 43%,
+      83% 22%,
+      23% 22%,
+      23% 24%,
+      91% 24%,
+      91% 26%,
+      18% 26%,
+      18% 83%,
+      29% 83%,
+      29% 17%,
+      41% 17%,
+      41% 39%,
+      18% 39%,
+      18% 82%,
+      54% 82%,
+      54% 88%,
+      19% 88%,
+      19% 4%,
+      39% 4%,
+      39% 14%,
+      76% 14%,
+      76% 52%,
+      23% 52%,
+      23% 35%,
+      19% 35%,
+      19% 8%,
+      36% 8%,
+      36% 31%,
+      73% 31%,
+      73% 16%,
+      1% 16%,
+      1% 56%,
+      50% 56%,
+      50% 8%
+    );
+  }
+
+  5% {
+    clip-path: polygon(
+      0% 29%,
+      44% 29%,
+      44% 83%,
+      94% 83%,
+      94% 56%,
+      11% 56%,
+      11% 64%,
+      94% 64%,
+      94% 70%,
+      88% 70%,
+      88% 32%,
+      18% 32%,
+      18% 96%,
+      10% 96%,
+      10% 62%,
+      9% 62%,
+      9% 84%,
+      68% 84%,
+      68% 50%,
+      52% 50%,
+      52% 55%,
+      35% 55%,
+      35% 87%,
+      25% 87%,
+      25% 39%,
+      15% 39%,
+      15% 88%,
+      52% 88%
+    );
+  }
+
+  30% {
+    clip-path: polygon(
+      0% 53%,
+      93% 53%,
+      93% 62%,
+      68% 62%,
+      68% 37%,
+      97% 37%,
+      97% 89%,
+      13% 89%,
+      13% 45%,
+      51% 45%,
+      51% 88%,
+      17% 88%,
+      17% 54%,
+      81% 54%,
+      81% 75%,
+      79% 75%,
+      79% 76%,
+      38% 76%,
+      38% 28%,
+      61% 28%,
+      61% 12%,
+      55% 12%,
+      55% 62%,
+      68% 62%,
+      68% 51%,
+      0% 51%,
+      0% 92%,
+      63% 92%,
+      63% 4%,
+      65% 4%
+    );
+  }
+
+  45% {
+    clip-path: polygon(
+      0% 33%,
+      2% 33%,
+      2% 69%,
+      58% 69%,
+      58% 94%,
+      55% 94%,
+      55% 25%,
+      33% 25%,
+      33% 85%,
+      16% 85%,
+      16% 19%,
+      5% 19%,
+      5% 20%,
+      79% 20%,
+      79% 96%,
+      93% 96%,
+      93% 50%,
+      5% 50%,
+      5% 74%,
+      55% 74%,
+      55% 57%,
+      96% 57%,
+      96% 59%,
+      87% 59%,
+      87% 65%,
+      82% 65%,
+      82% 39%,
+      63% 39%,
+      63% 92%,
+      4% 92%,
+      4% 36%,
+      24% 36%,
+      24% 70%,
+      1% 70%,
+      1% 43%,
+      15% 43%,
+      15% 28%,
+      23% 28%,
+      23% 71%,
+      90% 71%,
+      90% 86%,
+      97% 86%,
+      97% 1%,
+      60% 1%,
+      60% 67%,
+      71% 67%,
+      71% 91%,
+      17% 91%,
+      17% 14%,
+      39% 14%,
+      39% 30%,
+      58% 30%,
+      58% 11%,
+      52% 11%,
+      52% 83%,
+      68% 83%
+    );
+  }
+
+  76% {
+    clip-path: polygon(
+      0% 26%,
+      15% 26%,
+      15% 73%,
+      72% 73%,
+      72% 70%,
+      77% 70%,
+      77% 75%,
+      8% 75%,
+      8% 42%,
+      4% 42%,
+      4% 61%,
+      17% 61%,
+      17% 12%,
+      26% 12%,
+      26% 63%,
+      73% 63%,
+      73% 43%,
+      90% 43%,
+      90% 67%,
+      50% 67%,
+      50% 41%,
+      42% 41%,
+      42% 46%,
+      50% 46%,
+      50% 84%,
+      96% 84%,
+      96% 78%,
+      49% 78%,
+      49% 25%,
+      63% 25%,
+      63% 14%
+    );
+  }
+
+  90% {
+    clip-path: polygon(
+      0% 41%,
+      13% 41%,
+      13% 6%,
+      87% 6%,
+      87% 93%,
+      10% 93%,
+      10% 13%,
+      89% 13%,
+      89% 6%,
+      3% 6%,
+      3% 8%,
+      16% 8%,
+      16% 79%,
+      0% 79%,
+      0% 99%,
+      92% 99%,
+      92% 90%,
+      5% 90%,
+      5% 60%,
+      0% 60%,
+      0% 48%,
+      89% 48%,
+      89% 13%,
+      80% 13%,
+      80% 43%,
+      95% 43%,
+      95% 19%,
+      80% 19%,
+      80% 85%,
+      38% 85%,
+      38% 62%
+    );
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    clip-path: none;
+  }
+}
+
+.movement {
+  /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+  position: relative;
+  animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+  0% {
+    top: 0px;
+    left: -20px;
+  }
+
+  15% {
+    top: 10px;
+    left: 10px;
+  }
+
+  60% {
+    top: 5px;
+    left: -10px;
+  }
+
+  75% {
+    top: -5px;
+    left: 20px;
+  }
+
+  100% {
+    top: 10px;
+    left: 5px;
+  }
+}
+
+.opacity {
+  animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.1;
+  }
+
+  5% {
+    opacity: 0.7;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  45% {
+    opacity: 0.6;
+  }
+
+  76% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    opacity: 0;
+  }
+}
+
+.font {
+  animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+  0% {
+    font-weight: 100;
+    color: #e0287d;
+    filter: blur(3px);
+  }
+
+  20% {
+    font-weight: 500;
+    color: #4ef9ff;
+    filter: blur(0);
+  }
+
+  50% {
+    font-weight: 300;
+    color: #50d6ff;
+    filter: blur(2px);
+  }
+
+  60% {
+    font-weight: 700;
+    color: #43d3ff;
+    filter: blur(0);
+  }
+
+  90% {
+    font-weight: 500;
+    color: #e0287d;
+    filter: blur(6px);
+  }
+}
+
+.glitch span {
+  animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 8s step-end infinite, movement 10s step-end infinite;
+}
+
+.glitch::after {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 7s step-end infinite, movement 8s step-end infinite;
+}
+
+.hero-container {
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/*
+.back1 {
+  position: absolute;
+  top: 59.5%;
+  right: 30px;
+  width: 600px;
+  height: 350px;
+  background-color: #111;
+  opacity: 70%;
+  border-radius: em;
+}*/
+
+/*
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+.neon-button {
+  font-size: 4rem;
+
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.08em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.3em 0 var(--clr-neon), 0 0 0.2em 0 var(--clr-neon);
+
+  position: absolute;
+  top: 59.5%;
+  right: 30px;
+  width: 600px;
+  height: 350px;
+}
+*/
+
+.post1 {
+  width: 57px;
+  height: 50px;
+  background: url("../source/post1.png");
+  background-size: cover;
+  position: absolute;
+  top: 660px;
+  right: 90px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.post2 {
+  width: 50px;
+  height: 62px;
+  background: url("../source/post2.png");
+  background-size: cover;
+  position: absolute;
+  top: 250px;
+  left: 45px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.back2 {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 788px;
+  height: 208px;
+  background-color: #111;
+  opacity: 0.6; /* 투명도는 70%로 설정 */
+  border-radius: 20px;
+  mix-blend-mode: multiply; /* 블렌딩 모드를 multiply로 설정 */
+}
+
+.num {
+  font-size: 20;
+  font-weight: bold;
+  position: absolute;
+  top: 713px;
+  left: 64px;
+  font-family: "IBM Plex Sans KR", monospace;
+}
+
+.genre {
+  font-size: 17;
+  font-weight: normal;
+  position: absolute;
+  top: 716px;
+  left: 177px;
+  font-family: "IBM Plex Sans KR", monospace;
+  color: #a09b9d;
+}
+
+.gongpo {
+  font-size: 20;
+  font-weight: bold;
+  position: absolute;
+  top: 760px;
+  left: 64px;
+  font-family: "IBM Plex Sans KR", monospace;
+}
+
+.room {
+  font-size: 15;
+  font-weight: bold;
+  position: absolute;
+  color: #e0287d;
+  bottom: 40px;
+  right: 35px;
+  font-family: "IBM Plex Sans KR", monospace;
+  animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.circle1 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 762px;
+  left: 131px;
+}
+
+.circle2 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 762px;
+  left: 154px;
+}
+.circle3 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 762px;
+  left: 177px;
+}
+.circle4 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 762px;
+  left: 200px;
+}
+
+.circle5 {
+  width: 17px;
+  height: 17px;
+  background: #a09b9d;
+  border-radius: 50%;
+  position: absolute;
+  top: 762px;
+  left: 223px;
+}
+
+.hwaldong {
+  font-size: 20;
+  font-weight: bold;
+  position: absolute;
+  top: 803px;
+  left: 64px;
+  font-family: "IBM Plex Sans KR", monospace;
+}
+
+.circle6 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 805px;
+  left: 131px;
+}
+
+.circle7 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 805px;
+  left: 154px;
+}
+.circle8 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 805px;
+  left: 177px;
+}
+.circle9 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 805px;
+  left: 200px;
+}
+
+.circle10 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 805px;
+  left: 223px;
+}
+
+.teamwork {
+  font-size: 20;
+  font-weight: bold;
+  position: absolute;
+  top: 846px;
+  left: 64px;
+  font-family: "IBM Plex Sans KR", monospace;
+}
+
+.circle11 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 847px;
+  left: 131px;
+}
+
+.circle12 {
+  width: 17px;
+  height: 17px;
+  background: #e0287d;
+  border-radius: 50%;
+  position: absolute;
+  top: 847px;
+  left: 154px;
+}
+.circle13 {
+  width: 17px;
+  height: 17px;
+  background: #a09b9d;
+  border-radius: 50%;
+  position: absolute;
+  top: 847px;
+  left: 177px;
+}
+.circle14 {
+  width: 17px;
+  height: 17px;
+  background: #a09b9d;
+  border-radius: 50%;
+  position: absolute;
+  top: 847px;
+  left: 200px;
+}
+
+.circle15 {
+  width: 17px;
+  height: 17px;
+  background: #a09b9d;
+  border-radius: 50%;
+  position: absolute;
+  top: 847px;
+  left: 223px;
+}
+
+.level {
+  font-size: 20;
+  font-weight: bold;
+  position: absolute;
+  top: 713px;
+  left: 300px;
+  font-family: "IBM Plex Sans KR", monospace;
+}
+.star1 {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 711px;
+  left: 363px;
+  background-color: #e0287d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.star2 {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 712px;
+  left: 389px;
+  background-color: #e0287d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.star3 {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 712px;
+  left: 415px;
+  background-color: #e0287d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+.star4 {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 712px;
+  left: 441px;
+  background-color: #e0287d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+.star5 {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 712px;
+  left: 467px;
+  background-color: #a09b9d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.index {
+  font-size: 16;
+  font-weight: normal;
+  position: absolute;
+  top: 750px;
+  left: 300px;
+  line-height: 1.5em;
+  font-family: "IBM Plex Sans KR", serif;
+}
+
+.light1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: url("../source/light1.png");
+  top: 245px;
+  left: 83px;
+}
+
+.light2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: url("../source/light2.png");
+  top: 399px;
+  left: 80px;
+}
+
+.longlight {
+  width: 99px;
+  height: 41px;
+  position: absolute;
+  background: url("../source/longlight.png");
+  top: 242px;
+  right: 85px;
+}
+
+.button1_before {
+  width: 150px;
+  height: 150px;
+  background: url("../source/button1_before.png");
+  background-size: cover;
+  position: absolute;
+  top: 290px;
+  left: 60px;
+  cursor: pointer;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.button1_before:hover {
+  filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 10px #ffffffab); /* 네온 효과 */
+}
+
+.button1_after {
+  width: 150px;
+  height: 150px;
+  background: url("../source/button1_after.png");
+  background-size: cover;
+  position: absolute;
+  top: 290px;
+  left: 60px;
+  cursor: pointer;
+  display: none;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  filter: drop-shadow(0 0 2px #e0287d);
+}
+
+.button1_after:hover {
+  filter: drop-shadow(0 0 1px #50d6ff) drop-shadow(0 0 20px #e0287d); /* 네온 효과 */
+}
+
+.button2_before {
+  width: 150px;
+  height: 150px;
+  background: url("../source/button1_before.png");
+  background-size: cover;
+  position: absolute;
+  top: 442px;
+  left: 60px;
+  cursor: pointer;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.button2_before:hover {
+  filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 10px #ffffffab); /* 네온 효과 */
+}
+
+.button2_after {
+  width: 150px;
+  height: 150px;
+  background: url("../source/button1_after.png");
+  background-size: cover;
+  position: absolute;
+  top: 442px;
+  left: 60px;
+  cursor: pointer;
+  display: none;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  filter: drop-shadow(0 0 2px #e0287d);
+}
+
+.button2_after:hover {
+  filter: drop-shadow(0 0 1px #50d6ff) drop-shadow(0 0 20px #e0287d); /* 네온 효과 */
+}
+
+/*///////////////////////////////////////*/
+
+.gaugebox_before {
+  width: 123px;
+  height: 287px;
+  background: url("../source/graybox.png");
+  background-size: cover;
+  position: absolute;
+  top: 270px;
+  right: 70px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.gaugeboxone_before {
+  width: 91px;
+  height: 61px;
+  background: url("../source/grayboxone.png");
+  background-size: cover;
+  position: absolute;
+  top: 478px;
+  right: 88px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.gaugeboxtwo_before {
+  width: 91px;
+  height: 58px;
+  background: url("../source/grayboxtwo.png");
+  background-size: cover;
+  position: absolute;
+  top: 417px;
+  right: 86px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.gaugeboxthree_before {
+  width: 90px;
+  height: 62px;
+  background: url("../source/grayboxthree.png");
+  background-size: cover;
+  position: absolute;
+  top: 353px;
+  right: 87px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.gaugeboxfour_before {
+  width: 91px;
+  height: 68px;
+  background: url("../source/grayboxfour.png");
+  background-size: cover;
+  position: absolute;
+  top: 290px;
+  right: 86px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.gaugepush_before {
+  width: 118px;
+  height: 78px;
+  background: url("../source/graypush.png");
+  background-size: cover;
+  position: absolute;
+  top: 560px;
+  right: 73px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  cursor: pointer;
+}
+
+.gaugepush_before:hover {
+  filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 10px #ffffff); /* 네온 효과 */
+}
+
+.gaugebox_after {
+  width: 123px;
+  height: 287px;
+  background: url("../source/colorbox.png");
+  background-size: cover;
+  position: absolute;
+  top: 270px;
+  right: 70px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+  filter: drop-shadow(0 0 2px #50d6ff) drop-shadow(0 0 15px #e0287e9a); /* 네온 효과 */
+}
+
+.gaugeboxone_after {
+  width: 91px;
+  height: 61px;
+  background: url("../source/colorboxone.png");
+  background-size: cover;
+  position: absolute;
+  top: 478px;
+  right: 88px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+}
+
+.gaugeboxtwo_after {
+  width: 91px;
+  height: 58px;
+  background: url("../source/colorboxtwo.png");
+  background-size: cover;
+  position: absolute;
+  top: 417px;
+  right: 86px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+}
+
+.gaugeboxthree_after {
+  width: 90px;
+  height: 62px;
+  background: url("../source/colorboxthree.png");
+  background-size: cover;
+  position: absolute;
+  top: 353px;
+  right: 87px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+}
+
+.gaugeboxfour_after {
+  width: 91px;
+  height: 68px;
+  background: url("../source/colorboxfour.png");
+  background-size: cover;
+  position: absolute;
+  top: 290px;
+  right: 86px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+}
+
+.gaugepush_after {
+  width: 118px;
+  height: 78px;
+  background: url("../source/colorpush.png");
+  background-size: cover;
+  position: absolute;
+  top: 560px;
+  right: 73px;
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+  display: none;
+  filter: drop-shadow(0 0 1px #50d6ff);
+}
+
+.bubble1 {
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  width: 3px;
+  height: 3px;
+  background: #50d6ff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 25s linear infinite, fade 2s ease-in-out infinite alternate;
+}
+
+.bubble2 {
+  position: absolute;
+  top: 0px;
+  right: 350px;
+  width: 5px;
+  height: 5px;
+  background: #50d6ff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+
+.bubble3 {
+  position: absolute;
+  top: 0px;
+  right: 650px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 30s linear infinite,
+    fade 10s ease-in-out infinite alternate;
+}
+
+.bubble4 {
+  position: absolute;
+  top: -200px;
+  right: 650px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287e3f;
+  animation: sparkle 30s linear infinite,
+    fade 10s ease-in-out infinite alternate;
+}
+
+.bubble5 {
+  position: absolute;
+  top: -500px;
+  left: 550px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 5s ease-in-out infinite alternate;
+}
+
+.bubble6 {
+  position: absolute;
+  top: -400px;
+  left: 450px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287e3f;
+  animation: sparkle 30s linear infinite, fade 7s ease-in-out infinite alternate;
+}
+
+.bubble7 {
+  position: absolute;
+  top: -500px;
+  left: 300px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287e3f;
+  animation: sparkle 20s linear infinite, fade 2s ease-in-out infinite alternate;
+}
+
+.bubble8 {
+  position: absolute;
+  top: -300px;
+  left: 650px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 5s ease-in-out infinite alternate;
+}
+
+.bubble9 {
+  position: absolute;
+  top: -550px;
+  right: 350px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287ead;
+  animation: sparkle 20s linear infinite, fade 7s ease-in-out infinite alternate;
+}
+
+.bubble10 {
+  position: absolute;
+  top: -200px;
+  right: 450px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+
+.bubble11 {
+  position: absolute;
+  top: -200px;
+  left: 450px;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+.bubble12 {
+  position: absolute;
+  top: -200px;
+  right: 250px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287e67;
+  animation: sparkle 25s linear infinite, fade 5s ease-in-out infinite alternate;
+}
+
+.bubble13 {
+  position: absolute;
+  top: -100px;
+  left: 230px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 20s linear infinite, fade 4s ease-in-out infinite alternate;
+}
+
+.bubble14 {
+  position: absolute;
+  top: -100px;
+  left: 500px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 40s linear infinite, fade 5s ease-in-out infinite alternate;
+}
+
+.bubble15 {
+  position: absolute;
+  top: -100px;
+  right: 500px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.4);
+  animation: sparkle 60s linear infinite, fade 7s ease-in-out infinite alternate;
+}
+.bubble15 {
+  position: absolute;
+  top: 0px;
+  right: 500px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287ead;
+  animation: sparkle 50s linear infinite, fade 7s ease-in-out infinite alternate;
+}
+
+.bubble16 {
+  position: absolute;
+  top: 0px;
+  right: 400px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.269);
+  animation: sparkle 60s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+
+.bubble17 {
+  position: absolute;
+  top: 0px;
+  left: 400px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px rgba(80, 214, 255, 0.269),
+    0 0 10px 5px rgba(80, 214, 255, 0.269);
+  animation: sparkle 60s linear infinite, fade 3s ease-in-out infinite alternate;
+}
+.bubble18 {
+  position: absolute;
+  top: -50px;
+  left: 250px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px #e0287ead, 0 0 10px 5px #e0287e65;
+  animation: sparkle 70s linear infinite, fade 6s ease-in-out infinite alternate;
+}
+@keyframes sparkle {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-10vh);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+.cyberbox {
+  width: 368px;
+  height: 182px;
+  background: url("../source/cyberbox.png");
+  position: absolute;
+  top: 260px;
+  right: 670px;
+  display: none;
+  user-select: none; 
+  -webkit-user-drag: none; 
+}*/
+/* 
+.cyberbox {
+  width: 592px;
+  height: 722px;
+  background: url("../source/scene2.png");
+  position: absolute;
+  top: 22px;
+  right: 535px;
+  display: none;
+  user-select: none; 
+  -webkit-user-drag: none; 
+  overflow: hidden;
+  animation: glitch 2s infinite;
+} */
